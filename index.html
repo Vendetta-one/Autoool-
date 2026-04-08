@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autool | JUIT Ride Sharing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #ffffff;
+            color: #1a1a1a;
+            scroll-behavior: smooth;
+        }
+        .juit-gradient {
+            background: linear-gradient(135deg, #ff4d4d 0%, #f97316 100%);
+        }
+        .juit-text {
+            background: linear-gradient(135deg, #ff4d4d 0%, #f97316 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .route-line {
+            position: absolute;
+            left: 20px;
+            top: 40px;
+            bottom: 40px;
+            width: 2px;
+            background: repeating-linear-gradient(to bottom, #ddd 0, #ddd 5px, transparent 5px, transparent 10px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 juit-gradient rounded-xl flex items-center justify-center shadow-lg shadow-orange-500/20">
+                    <i data-lucide="car" class="text-white w-6 h-6"></i>
+                </div>
+                <span class="text-2xl font-extrabold tracking-tight text-gray-900">Autool</span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-bold text-gray-600">
+                <a href="#how" class="hover:text-orange-600 transition-colors">How it Works</a>
+                <a href="#routes" class="hover:text-orange-600 transition-colors">Top Routes</a>
+                <a href="#safety" class="hover:text-orange-600 transition-colors">Safety</a>
+            </div>
+            <div class="flex items-center space-x-3">
+                <button class="px-6 py-2.5 text-sm font-bold bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-all shadow-md">Join App</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-32 pb-16 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="text-left">
+                <div class="inline-block px-4 py-1.5 bg-orange-100 text-orange-700 rounded-full text-xs font-bold mb-6 tracking-wide uppercase">
+                    Exclusively for JUIT Students
+                </div>
+                <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-gray-900">
+                    Stop waiting for the <span class="juit-text">Bus.</span> <br>Share an Auto.
+                </h1>
+                <p class="text-lg text-gray-600 mb-10 leading-relaxed max-w-lg">
+                    Connect with fellow JUITians at the gate. Split the fare to Shimla, Solan, or Chandigarh. Faster, cheaper, and safer.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button class="px-8 py-4 juit-gradient text-white rounded-2xl font-bold text-lg hover:scale-105 transition-transform shadow-xl shadow-orange-500/30 flex items-center justify-center">
+                        Find a Ride <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+                    </button>
+                    <button class="px-8 py-4 bg-white text-gray-900 border-2 border-gray-100 rounded-2xl font-bold text-lg hover:bg-gray-50 transition-all flex items-center justify-center">
+                        Offer a Ride
+                    </button>
+                </div>
+            </div>
+
+            <!-- Booking Preview Card -->
+            <div class="relative">
+                <div class="absolute -top-10 -left-10 w-40 h-40 bg-orange-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
+                <div class="relative glass-card p-6 rounded-3xl shadow-2xl border border-white/50">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="font-bold text-xl">Active Pools</h3>
+                        <span class="text-xs font-bold text-green-600 bg-green-100 px-2 py-1 rounded">12 Live Now</span>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <!-- Ride 1 -->
+                        <div class="p-4 bg-gray-50 rounded-2xl border border-gray-100 relative overflow-hidden">
+                            <div class="flex justify-between mb-3">
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xs">RS</div>
+                                    <span class="font-bold text-sm text-gray-800">Rahul S.</span>
+                                </div>
+                                <span class="text-xs font-bold text-orange-600">₹80 / person</span>
+                            </div>
+                            <div class="pl-2 relative">
+                                <div class="route-line"></div>
+                                <div class="flex items-center space-x-3 mb-2">
+                                    <div class="w-2.5 h-2.5 rounded-full bg-orange-500 z-10"></div>
+                                    <span class="text-sm font-semibold">JUIT Main Gate</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-2.5 h-2.5 rounded-full bg-gray-300 z-10"></div>
+                                    <span class="text-sm font-semibold">Old ISBT Shimla</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 flex justify-between items-center">
+                                <div class="flex -space-x-2">
+                                    <div class="w-7 h-7 rounded-full border-2 border-white bg-gray-200"></div>
+                                    <div class="w-7 h-7 rounded-full border-2 border-white bg-gray-300"></div>
+                                    <div class="w-7 h-7 rounded-full border-2 border-white bg-orange-100 flex items-center justify-center text-[10px] font-bold text-orange-600">+1</div>
+                                </div>
+                                <button class="px-4 py-1.5 bg-gray-900 text-white text-xs font-bold rounded-lg">Join Pool</button>
+                            </div>
+                        </div>
+
+                        <!-- Ride 2 -->
+                        <div class="p-4 bg-gray-50 rounded-2xl border border-gray-100">
+                            <div class="flex justify-between mb-3">
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-bold text-xs">AK</div>
+                                    <span class="font-bold text-sm text-gray-800">Amit K.</span>
+                                </div>
+                                <span class="text-xs font-bold text-orange-600">₹150 / person</span>
+                            </div>
+                            <p class="text-xs font-medium text-gray-500 mb-2">Heading to Chandigarh for the weekend!</p>
+                            <button class="w-full py-2 bg-orange-100 text-orange-700 text-xs font-bold rounded-lg hover:bg-orange-200 transition-colors">Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- App Features -->
+    <section id="how" class="py-20 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 bg-orange-50 rounded-2xl flex items-center justify-center text-orange-600 mb-6">
+                        <i data-lucide="map-pin" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Set Destination</h3>
+                    <p class="text-gray-500 text-sm">Pick Shimla, Solan, or anywhere else. Find others heading your way.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-6">
+                        <i data-lucide="users" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Student Only</h3>
+                    <p class="text-gray-500 text-sm">Verified @juitsolan.in emails only. Stay safe within the community.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center text-green-600 mb-6">
+                        <i data-lucide="wallet" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Split the Bill</h3>
+                    <p class="text-gray-500 text-sm">Don't pay for the whole auto. Split it 4 ways and save money for snacks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-6">
+        <div class="max-w-5xl mx-auto juit-gradient rounded-[3rem] p-12 text-center text-white relative overflow-hidden">
+            <div class="relative z-10">
+                <h2 class="text-4xl font-extrabold mb-6">Ready to skip the HRTC?</h2>
+                <p class="text-orange-100 text-lg mb-10 max-w-xl mx-auto">
+                    Download the Autool app specifically designed for the Waknaghat hill climb.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button class="bg-white text-gray-900 px-8 py-3 rounded-xl font-bold flex items-center hover:bg-orange-50 transition-colors">
+                        <i data-lucide="apple" class="mr-2 w-5 h-5"></i> App Store
+                    </button>
+                    <button class="bg-white text-gray-900 px-8 py-3 rounded-xl font-bold flex items-center hover:bg-orange-50 transition-colors">
+                        <i data-lucide="play" class="mr-2 w-5 h-5"></i> Play Store
+                    </button>
+                </div>
+            </div>
+            <!-- Decorative circle -->
+            <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 juit-gradient rounded-lg flex items-center justify-center text-white font-bold">A</div>
+                <span class="text-xl font-bold text-gray-900">Autool</span>
+            </div>
+            <p class="text-gray-500 text-sm">Made by JUITians, for JUITians. 🏔️</p>
+            <div class="flex space-x-6 text-gray-400">
+                <i data-lucide="instagram" class="w-5 h-5 hover:text-orange-600 cursor-pointer"></i>
+                <i data-lucide="twitter" class="w-5 h-5 hover:text-orange-600 cursor-pointer"></i>
+                <i data-lucide="github" class="w-5 h-5 hover:text-orange-600 cursor-pointer"></i>
+            </div>
+        </div>
+        <div class="text-center mt-8 text-xs text-gray-400">
+             Built with precision for Saanvi.
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
